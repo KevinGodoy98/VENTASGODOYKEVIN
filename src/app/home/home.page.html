@@ -1,0 +1,47 @@
+<ion-app>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>PRODUCTOS</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <!--<ion-searchbar placeholder="Buscar Producto por nombre o codigo" showcancelbutton=""(ionInput)="filterList($event)"></ion-searchbar>-->
+    <ion-item-divider>Mis Productos:</ion-item-divider>
+    <div class="food-list" >
+      <div *ngFor="let producto of productos | async" >
+        <ion-img src="{{producto.imagen}}"  (click)="detalleProducto(producto)"></ion-img>
+        <div class="card-content">
+          <h3 class="nombre">{{producto.nombre}}</h3>
+  
+          <h2 class="precio"><sup>$</sup>{{producto.precio|number:'1.2'}}</h2>
+          
+       
+        </div>
+      </div>
+    </div>
+  <!--<ion-list lines="none">
+      <ion-item *ngFor="let producto of productos | async">
+        <ion-label class="ion-text-wrap">
+          <img [src]="producto.imagen" detail (click)="detalleProducto(producto)">
+          <ion-text color="primary">
+            <h3>{{ producto.nombre }}</h3>
+          </ion-text>
+          <p><strong>Precio :</strong>{{ producto.precio }}</p> 
+
+          <ion-buttons>
+            <ion-button (click)="agregarProducto(producto)">
+              <ion-icon slot="icon-only" name="add" ></ion-icon>
+            </ion-button>
+          <ion-button (click)="verproducto()"color="primary" expand="block" >Ver producto</ion-button>
+          <ion-item-divider></ion-item-divider>
+        </ion-label>
+        
+      </ion-item>
+    </ion-list>-->
+  
+  </ion-content>
+

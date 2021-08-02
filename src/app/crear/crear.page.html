@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Crear....</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 style="text-align:center">AGREGAR PRODUCTO</h1>
+
+  <ion-item>
+    <ion-label position="stacked">Precio:</ion-label>
+    <ion-input [(ngModel)]="producto.precio"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Imagen del producto:</ion-label>
+    <ion-input [(ngModel)]="producto.imagen"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Nombre:</ion-label>
+    <ion-input [(ngModel)]="producto.nombre"></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label position="stacked">Descripcion:</ion-label>
+    <ion-input [(ngModel)]="producto.descripcion"></ion-input>
+  </ion-item>
+
+ 
+
+  <br>
+  <br>
+  <br>
+
+  <ion-button color="success" expand="full" (click)="add()">Agregar</ion-button>
+</ion-content>
